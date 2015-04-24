@@ -1,0 +1,11 @@
+cur_frm.cscript.onload=function(doc,cdt,cdn)
+{
+	frappe.call({
+		method:'account1.account1.doctype.balance_sheet.balance_sheet.get_cash',
+		arge:{},
+		callback:function(r)
+		{
+			set_field_options("available_cash",r.message);
+		}
+	})
+}
